@@ -15,7 +15,7 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - name: Validate JSON
-        uses: docker://orrosenblatt/validate-json-action:latest
-        env:
-          INPUT_SCHEMA: charts/eap74/values.schema.json
-          INPUT_JSONS: examples/eap74/helloworld-rs/helloworld-rs-app.yaml
+        uses: emagers/json-schema-validation@v1.0.0
+        with:
+          schema: charts/eap74/values.schema.json
+          testFile: examples/eap74/helloworld-rs/helloworld-rs-app.yaml
