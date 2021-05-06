@@ -22,7 +22,8 @@ jobs:
             cat charts/eap74/values.schema.json | jq
 
             echo "Check Yaml Examples"
-            for f in examples/*/*.yaml; do
+            shopt -s globstar
+            for f in examples/**/*.yaml; do # Whitespace-safe and recursive
               echo $f
-              cat $f | yq
+              yq validate $f
             done
