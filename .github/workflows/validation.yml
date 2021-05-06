@@ -22,9 +22,7 @@ jobs:
             cat charts/eap74/values.schema.json | jq
 
             echo "Check Yaml Examples"
-            # Make sure globstar is enabled
-            shopt -s globstar
-            for f in examples/**/*.ya; do
+            for f in examples/*/*.yaml; do
               echo $f
               cat $f | yq
             done
