@@ -5,19 +5,18 @@
 # file with configuration.  For more information, see:
 # https://github.com/actions/labeler
 
-name: "JSON Validation"
-on:
-  pull_request:
+name: File Validation
+
+on: [push, pull_request]
 
 jobs:
-  verify-json-validation:
+  test-action:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - name: Run Kubernetes tools
+        uses: stefanprodan/kube-tools@v1
         with:
-          fetch-depth: 0
-      - name: Validate JSON
-        uses: emagers/json-schema-validation@v1.0.0
-        with:
-          schema: charts/eap74/values.schema.json
-          testFile: examples/eap74/helloworld-rs/helloworld-rs-app.yaml
+          command: |
+            echo "Check JSON schema"
+            cat charts/eap74/values.schema.json | jq
