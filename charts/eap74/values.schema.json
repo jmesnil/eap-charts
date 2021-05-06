@@ -275,7 +275,6 @@
                           "items": {
                             "type": "string"
                           }
-                    }
                 }
             }
         },
