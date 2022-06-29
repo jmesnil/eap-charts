@@ -17,6 +17,19 @@ entries:
     version: 1.0.0
   eap8:
   - apiVersion: v2
+    created: "2022-06-29T14:04:25.21385714Z"
+    dependencies:
+    - name: wildfly-common
+      repository: https://docs.wildfly.org/wildfly-charts/
+      version: 2.0.2
+    description: Build and Deploy EAP 8 applications on OpenShift
+    digest: 0cd72eb1e574c64fb00c11a799310ea4de24e4713fcecfae899c63fe9489ff0e
+    name: eap8
+    type: application
+    urls:
+    - https://github.com/jmesnil/eap-charts/releases/download/eap8-1.0.1/eap8-1.0.1.tgz
+    version: 1.0.1
+  - apiVersion: v2
     created: "2022-06-29T13:56:32.806984222Z"
     dependencies:
     - name: wildfly-common
