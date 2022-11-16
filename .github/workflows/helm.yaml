@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: Helm Chart Release
+name: Helm Chart Prerelease
 
 # Controls when the action will run. 
 on:
@@ -29,7 +29,13 @@ jobs:
         with:
           version: v3.4.0
 
-      - name: Run chart-releaser
-        uses: helm/chart-releaser-action@v1.1.0
-        env:
-          CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+      - name: Create the Helm Chart 
+        run: |
+          rm -rf .helm-prerelease
+          mkdir .helm-prerelease
+          helm package -u charts/eap74 -d .helm-prerelease
+     
+      - name: Upload the generated archive
+        uses: 'actions/upload-artifact@v3'
+        with:
+          path: .helm-prerelease/**
