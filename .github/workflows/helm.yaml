@@ -35,7 +35,7 @@ jobs:
           mkdir .helm-prerelease
           helm package -u charts/eap74 -d .helm-prerelease
      
-      - name: Upload the generated archive
-        uses: 'actions/upload-artifact@v3'
+      - name: Upload the Release
+        uses: softprops/action-gh-release@v1
         with:
-          path: .helm-prerelease/**
+          files: .helm-prerelease/**
