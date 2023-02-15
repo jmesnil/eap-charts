@@ -5,6 +5,8 @@
 image:
   tag: latest
 build:
+  uri: https://github.com/kabir/eap-openshift-quickstarts-wip
+  contextDir: helloworld
   enabled: true
   mode: s2i
   s2i:
