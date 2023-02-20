@@ -106,6 +106,23 @@ entries:
       charts.openshift.io/provider: Red Hat
     apiVersion: v2
     appVersion: "7.4"
+    created: "2023-02-20T14:14:37.819260404Z"
+    dependencies:
+    - name: wildfly-common
+      repository: https://docs.wildfly.org/wildfly-charts/
+      version: 1.3.0
+    description: Build and deploy JBoss EAP 7.4 applications on OpenShift
+    digest: 40b47e22dcba88dffb264eb1b2c70b96197d9b146ed88ff09bd582aa53736fbe
+    name: eap74
+    type: application
+    urls:
+    - https://github.com/jmesnil/eap-charts/releases/download/eap74-1.1.5/eap74-1.1.5.tgz
+    version: 1.1.5
+  - annotations:
+      charts.openshift.io/name: JBoss EAP 7.4
+      charts.openshift.io/provider: Red Hat
+    apiVersion: v2
+    appVersion: "7.4"
     created: "2023-02-15T16:28:57.949212623Z"
     dependencies:
     - name: wildfly-common
